@@ -1,0 +1,2842 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>شركة بوابة البناء - صناعة الألمونيوم والبي في سي</title>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #c17817;
+            --secondary-color: #8b5a0f;
+            --dark-color: #2c1810;
+            --light-color: #f8f5f0;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --gray-light: #e5e7eb;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+            height: -webkit-fill-available;
+        }
+
+        body {
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--white);
+            color: var(--dark-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ========== LOADER ========== */
+        .loader {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 99999 !important;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            margin-bottom: 30px;
+            animation: logoFloat 2s ease-in-out infinite;
+        }
+
+        .loader-logo img {
+            height: 140px;
+            width: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .loader-spinner {
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--white);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-size: 22px;
+            color: var(--white);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-top {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 10px 0;
+            color: var(--white);
+        }
+
+        .header-top-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .header-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .header-contact-item i {
+            font-size: 16px;
+        }
+
+        .header-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .header-social a {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .header-social a:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 65px;
+            width: auto;
+        }
+
+        .company-info h1 {
+            font-size: 24px;
+            color: var(--dark-color);
+            font-weight: 900;
+            margin-bottom: 3px;
+            line-height: 1.2;
+        }
+
+        .company-info span {
+            font-size: 13px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--dark-color);
+            position: relative;
+            transition: var(--transition);
+            padding: 5px 0;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: var(--dark-color);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            margin-top: 120px;
+            min-height: calc(100vh - 120px);
+            min-height: calc(-webkit-fill-available - 120px);
+            background: linear-gradient(135deg, rgba(193, 120, 23, 0.95), rgba(139, 90, 15, 0.95)),
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 60px 30px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h2 {
+            font-size: 56px;
+            color: var(--white);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-text .highlight {
+            color: #ffd700;
+            display: block;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: grid;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .hero-feature:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .hero-feature i {
+            font-size: 24px;
+            color: #ffd700;
+        }
+
+        .hero-feature span {
+            font-size: 17px;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 35px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: floatImage 3s ease-in-out infinite;
+        }
+
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* ========== FEATURES SECTION ========== */
+        .features {
+            padding: 100px 30px;
+            background: var(--light-color);
+        }
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 46px;
+            color: var(--dark-color);
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 19px;
+            color: var(--gray);
+            margin-top: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 36px;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotateY(360deg);
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            color: var(--dark-color);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 100px 30px;
+            background: var(--white);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+        }
+
+        .about-image-main {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image-small {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 8px solid var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-content h2 {
+            font-size: 42px;
+            color: var(--dark-color);
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .about-content h2 span {
+            color: var(--primary-color);
+        }
+
+        .about-content p {
+            font-size: 17px;
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: var(--light-color);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .stat-box:hover .stat-number,
+        .stat-box:hover .stat-label {
+            color: var(--white);
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        /* ========== PRODUCTS SECTION ========== */
+        .products {
+            padding: 100px 30px;
+            background: var(--light-color);
+        }
+
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-image-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .product-content {
+            padding: 30px;
+        }
+
+        .product-content h3 {
+            font-size: 22px;
+            color: var(--dark-color);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .product-content p {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .product-features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .product-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--gray);
+        }
+
+        .product-feature-item i {
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services {
+            padding: 100px 30px;
+            background: var(--white);
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, var(--light-color), var(--white));
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transition: var(--transition);
+            z-index: 0;
+        }
+
+        .service-card:hover::before {
+            left: 0;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .service-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover h3,
+        .service-card:hover p,
+        .service-card:hover .service-icon {
+            color: var(--white);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: var(--dark-color);
+            font-weight: 800;
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+            transition: var(--transition);
+        }
+
+        /* ========== GALLERY SECTION ========== */
+        .gallery {
+            padding: 100px 30px;
+            background: var(--light-color);
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 300px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.2);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(193, 120, 23, 0.9), rgba(139, 90, 15, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            font-size: 48px;
+            color: var(--white);
+        }
+
+        /* ========== CONTACT SECTION ========== */
+        .contact {
+            padding: 100px 30px;
+            background: linear-gradient(135deg, rgba(193, 120, 23, 0.95), rgba(139, 90, 15, 0.95)),
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600') center/cover fixed;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 36px;
+            color: var(--white);
+        }
+
+        .contact-card h3 {
+            font-size: 24px;
+            color: var(--dark-color);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            font-size: 17px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .contact-card a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .section-title.white h2,
+        .section-title.white p {
+            color: var(--white);
+        }
+
+        .section-title.white h2::after {
+            background: var(--white);
+        }
+
+        /* ========== MAP SECTION ========== */
+        .map-section {
+            padding: 0;
+            background: var(--light-color);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(20%);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 80px 30px 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h3 {
+            font-size: 22px;
+            color: var(--white);
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .footer-logo-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        .footer-logo-text {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.3;
+        }
+
+        .footer-description {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-right: 10px;
+        }
+
+        .footer-links a i {
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .footer-contact-item i {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-top: 3px;
+        }
+
+        .footer-contact-item div {
+            flex: 1;
+        }
+
+        .footer-contact-item strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+
+        .footer-contact-item span,
+        .footer-contact-item a {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .footer-contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-bottom a {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* ========== WHATSAPP FLOAT ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
+        }
+
+        .whatsapp-float a {
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            color: var(--white);
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.7);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 5px 35px rgba(37, 211, 102, 0.8);
+            }
+        }
+
+        /* ========== SCROLL TO TOP ========== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 22px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 1200px) {
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .about-image-small {
+                right: 20px;
+                bottom: 20px;
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .header-top-content {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .header-contact {
+                justify-content: center;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 400px;
+                height: 100vh;
+                height: -webkit-fill-available;
+                background: var(--white);
+                flex-direction: column;
+                gap: 0;
+                padding: 100px 40px 40px;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: right 0.4s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                padding: 20px 0;
+                border-bottom: 1px solid var(--gray-light);
+            }
+
+            .nav-links a {
+                font-size: 19px;
+                display: block;
+                width: 100%;
+            }
+
+            .nav-links a::before {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                margin-top: 140px;
+                min-height: calc(100vh - 140px);
+                padding: 40px 20px;
+            }
+
+            .hero-text h2 {
+                font-size: 38px;
+            }
+
+            .hero-text p {
+                font-size: 17px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-title h2 {
+                font-size: 36px;
+            }
+
+            .features,
+            .about,
+            .products,
+            .services,
+            .gallery,
+            .contact {
+                padding: 60px 20px;
+            }
+
+            .about-image-main {
+                height: 400px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                padding: 8px 0;
+            }
+
+            .header-contact {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header-contact-item {
+                font-size: 13px;
+            }
+
+            .company-info h1 {
+                font-size: 18px;
+            }
+
+            .company-info span {
+                font-size: 11px;
+            }
+
+            .logo-container img {
+                height: 50px;
+            }
+
+            .hero {
+                margin-top: 160px;
+                min-height: calc(100vh - 160px);
+            }
+
+            .hero-text h2 {
+                font-size: 32px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .hero-feature {
+                padding: 12px 15px;
+            }
+
+            .hero-feature i {
+                font-size: 20px;
+            }
+
+            .hero-feature span {
+                font-size: 15px;
+            }
+
+            .btn {
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .section-title p {
+                font-size: 16px;
+            }
+
+            .features-grid,
+            .products-grid,
+            .services-grid,
+            .gallery-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .feature-card,
+            .service-card,
+            .contact-card {
+                padding: 35px 25px;
+            }
+
+            .about-image-small {
+                display: none;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .whatsapp-float a {
+                width: 58px;
+                height: 58px;
+                font-size: 30px;
+            }
+
+            .scroll-top {
+                bottom: 90px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-main {
+                padding: 12px 0;
+            }
+
+            .company-info h1 {
+                font-size: 16px;
+            }
+
+            .company-info span {
+                font-size: 10px;
+            }
+
+            .logo-container img {
+                height: 45px;
+            }
+
+            .hero-text h2 {
+                font-size: 26px;
+            }
+
+            .hero-text p {
+                font-size: 15px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+
+            .about-content h2 {
+                font-size: 28px;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .whatsapp-float a {
+                width: 52px;
+                height: 52px;
+                font-size: 26px;
+            }
+
+            .scroll-top {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+                bottom: 80px;
+            }
+        }
+
+        /* iOS Safari specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .hero,
+            .nav-links {
+                min-height: -webkit-fill-available;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-logo">
+            <img src="logo.png" alt="شركة بوابة البناء">
+        </div>
+        <div class="loader-spinner"></div>
+        <div class="loader-text">جاري التحميل...</div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/218912141471" target="_blank" title="تواصل معنا عبر واتساب" aria-label="واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-top">
+            <div class="header-top-content">
+                <div class="header-contact">
+                    <div class="header-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>0912141471</span>
+                    </div>
+                    <div class="header-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>ليبيا - زليتن</span>
+                    </div>
+                </div>
+                <div class="header-social">
+                    <a href="https://www.facebook.com" target="_blank" title="فيسبوك" aria-label="فيسبوك">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/218912141471" target="_blank" title="واتساب" aria-label="واتساب">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" title="انستغرام" aria-label="انستغرام">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <nav>
+                <div class="logo-container">
+                    <img src="logo.png" alt="شركة بوابة البناء">
+                    <div class="company-info">
+                        <h1>شركة بوابة البناء</h1>
+                        <span>لصناعة الألمونيوم والبي في سي</span>
+                    </div>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#products">المنتجات</a></li>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#gallery">معرض الأعمال</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-grid">
+                <div class="hero-text fade-in-right">
+                    <h2>
+                        شركة بوابة البناء
+                        <span class="highlight">لصناعة الألمونيوم والبي في سي</span>
+                    </h2>
+                    <p>نحن متخصصون في تصنيع وتركيب جميع أنواع الألمونيوم والبي في سي بأعلى معايير الجودة والاحترافية</p>
+                    <p>نقدم حلولاً مبتكرة وعصرية لجميع احتياجاتكم من النوافذ والأبواب والواجهات</p>
+
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>جودة عالية ومواد أصلية</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>تصاميم عصرية ومبتكرة</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>فريق عمل محترف ومتخصص</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>أسعار تنافسية وضمان شامل</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary">
+                            <i class="fas fa-th-large"></i>
+                            تصفح المنتجات
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-phone-alt"></i>
+                            تواصل معنا
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image fade-in-left">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="منتجات الألمونيوم">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="section-title">
+                <h2>لماذا تختارنا</h2>
+                <p>نقدم أفضل الحلول والخدمات في مجال صناعة الألمونيوم والبي في سي</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>جودة عالية</h3>
+                    <p>نستخدم أفضل المواد الخام والتقنيات الحديثة لضمان منتجات عالية الجودة تدوم لسنوات طويلة</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>فريق محترف</h3>
+                    <p>فريق عمل متخصص وذو خبرة واسعة في مجال تصنيع وتركيب الألمونيوم والبي في سي</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>تصاميم مبتكرة</h3>
+                    <p>نوفر تصاميم عصرية ومبتكرة تناسب جميع الأذواق والاحتياجات المعمارية الحديثة</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>التزام بالمواعيد</h3>
+                    <p>نلتزم بمواعيد التسليم المحددة ونحرص على إنجاز المشاريع في الوقت المناسب</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>ضمان شامل</h3>
+                    <p>نقدم ضماناً شاملاً على جميع منتجاتنا وخدماتنا لراحة بالكم وثقتكم</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>أسعار تنافسية</h3>
+                    <p>نوفر أفضل الأسعار في السوق مع الحفاظ على أعلى معايير الجودة والخدمة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-grid">
+                <div class="about-images fade-in-left">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="عن الشركة" class="about-image-main">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400" alt="أعمالنا" class="about-image-small">
+                </div>
+                <div class="about-content fade-in-right">
+                    <h2>من نحن</h2>
+                    <h2><span>شركة بوابة البناء</span></h2>
+                    <p>
+                        شركة بوابة البناء هي إحدى الشركات الرائدة في ليبيا في مجال صناعة وتركيب الألمونيوم والبي في سي. نفخر بتقديم منتجات عالية الجودة وخدمات متميزة لعملائنا الكرام.
+                    </p>
+                    <p>
+                        نمتلك خبرة واسعة في تصنيع وتركيب النوافذ والأبواب والواجهات الزجاجية والديكورات الداخلية والخارجية. نستخدم أحدث التقنيات والمعدات لضمان أفضل النتائج.
+                    </p>
+                    <p>
+                        نسعى دائماً لتلبية احتياجات عملائنا وتحقيق رضاهم من خلال تقديم حلول مبتكرة وعصرية تناسب جميع المتطلبات والميزانيات.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">سنة خبرة</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">مشروع منجز</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">عميل راضٍ</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">جودة مضمونة</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="products-container">
+            <div class="section-title">
+                <h2>منتجاتنا</h2>
+                <p>نوفر مجموعة واسعة من منتجات الألمونيوم والبي في سي عالية الجودة</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=600" alt="نوافذ ألمونيوم" class="product-image">
+                        <div class="product-badge">الأكثر طلباً</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>نوافذ ألمونيوم</h3>
+                        <p>نوافذ ألمونيوم عالية الجودة بتصاميم عصرية ومتنوعة تناسب جميع الأذواق</p>
+                        <div class="product-features">
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>عازل للصوت والحرارة</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>مقاوم للعوامل الجوية</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>سهل الصيانة والتنظيف</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600" alt="أبواب ألمونيوم" class="product-image">
+                        <div class="product-badge">جديد</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>أبواب ألمونيوم</h3>
+                        <p>أبواب ألمونيوم فاخرة بتصاميم حديثة توفر الأمان والجمال في آن واحد</p>
+                        <div class="product-features">
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>متانة وقوة عالية</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>تصاميم متعددة</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>أمان محسّن</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600" alt="واجهات زجاجية" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <h3>واجهات زجاجية</h3>
+                        <p>واجهات زجاجية عصرية تضفي لمسة جمالية راقية على المباني التجارية والسكنية</p>
+                        <div class="product-features">
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>تصاميم معمارية حديثة</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>زجاج عالي الجودة</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>إضاءة طبيعية ممتازة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600" alt="أبواب بي في سي" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <h3>أبواب بي في سي</h3>
+                        <p>أبواب بي في سي عالية الجودة توفر عزلاً حرارياً وصوتياً ممتازاً</p>
+                        <div class="product-features">
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>عازل حراري وصوتي</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>مقاوم للرطوبة</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>صديق للبيئة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600" alt="شبابيك بي في سي" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <h3>شبابيك بي في سي</h3>
+                        <p>شبابيك بي في سي متينة وعملية بألوان وتصاميم متنوعة</p>
+                        <div class="product-features">
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>توفير في الطاقة</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>سهولة في الاستخدام</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>ألوان متعددة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=600" alt="ديكورات ألمونيوم" class="product-image">
+                        <div class="product-badge">مميز</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>ديكورات ألمونيوم</h3>
+                        <p>ديكورات داخلية وخارجية من الألمونيوم تضيف لمسة فنية راقية</p>
+                        <div class="product-features">
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>تصاميم فريدة</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>خفيف الوزن</span>
+                            </div>
+                            <div class="product-feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>سهل التركيب</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-title">
+                <h2>خدماتنا</h2>
+                <p>نقدم مجموعة شاملة من الخدمات المتخصصة في مجال الألمونيوم والبي في سي</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>التصميم والاستشارات</h3>
+                    <p>نقدم خدمات التصميم المعماري والاستشارات الفنية المجانية لمساعدتك في اختيار الحلول المثالية لمشروعك</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>التصنيع حسب الطلب</h3>
+                    <p>نصنع جميع منتجاتنا حسب المقاسات والمواصفات المطلوبة باستخدام أحدث المعدات والتقنيات</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>التركيب الاحترافي</h3>
+                    <p>فريق تركيب محترف ومدرب يضمن تركيباً دقيقاً وآمناً لجميع المنتجات في الوقت المحدد</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>الصيانة والإصلاح</h3>
+                    <p>خدمات صيانة دورية وإصلاح سريع لجميع أنواع الألمونيوم والبي في سي بأسعار مناسبة</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>التجديد والتحديث</h3>
+                    <p>نساعدك في تجديد وتحديث النوافذ والأبواب القديمة بمنتجات عصرية وعالية الجودة</p>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>خدمة العملاء</h3>
+                    <p>فريق خدمة عملاء متاح على مدار الساعة للرد على استفساراتكم وتقديم الدعم اللازم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-container">
+            <div class="section-title">
+                <h2>معرض أعمالنا</h2>
+                <p>تصفح مجموعة من أفضل مشاريعنا المنجزة بنجاح</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" alt="مشروع 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600" alt="مشروع 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600" alt="مشروع 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600" alt="مشروع 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600" alt="مشروع 5">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600" alt="مشروع 6">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-title white">
+                <h2>تواصل معنا</h2>
+                <p>نحن هنا للإجابة على جميع استفساراتكم وخدمتكم</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>اتصل بنا</h3>
+                    <p>
+                        <a href="tel:+218912141471">0912141471</a>
+                    </p>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>واتساب</h3>
+                    <p>
+                        <a href="https://wa.me/218912141471" target="_blank">0912141471</a>
+                    </p>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>الموقع</h3>
+                    <p>ليبيا - زليتن</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3366.0325164640235!2d14.646685227153563!3d32.471822032508086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDI4JzE4LjUiTiAxNMKwMzgnNDAuMyJF!5e0!3m2!1sar!2sly!4v1767022593619!5m2!1sar!2sly" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section footer-logo-section">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="شركة بوابة البناء">
+                        <div class="footer-logo-text">بوابة البناء</div>
+                    </div>
+                    <p class="footer-description">
+                        شركة متخصصة في صناعة وتركيب جميع أنواع الألمونيوم والبي في سي بأعلى معايير الجودة والاحترافية في ليبيا
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com" target="_blank" title="فيسبوك">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/218912141471" target="_blank" title="واتساب">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" title="انستغرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" title="تويتر">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <div class="footer-links">
+                        <a href="#home">
+                            <i class="fas fa-chevron-left"></i>
+                            الرئيسية
+                        </a>
+                        <a href="#about">
+                            <i class="fas fa-chevron-left"></i>
+                            من نحن
+                        </a>
+                        <a href="#products">
+                            <i class="fas fa-chevron-left"></i>
+                            المنتجات
+                        </a>
+                        <a href="#services">
+                            <i class="fas fa-chevron-left"></i>
+                            الخدمات
+                        </a>
+                        <a href="#gallery">
+                            <i class="fas fa-chevron-left"></i>
+                            معرض الأعمال
+                        </a>
+                        <a href="#contact">
+                            <i class="fas fa-chevron-left"></i>
+                            اتصل بنا
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>منتجاتنا</h3>
+                    <div class="footer-links">
+                        <a href="#products">
+                            <i class="fas fa-chevron-left"></i>
+                            نوافذ ألمونيوم
+                        </a>
+                        <a href="#products">
+                            <i class="fas fa-chevron-left"></i>
+                            أبواب ألمونيوم
+                        </a>
+                        <a href="#products">
+                            <i class="fas fa-chevron-left"></i>
+                            واجهات زجاجية
+                        </a>
+                        <a href="#products">
+                            <i class="fas fa-chevron-left"></i>
+                            أبواب بي في سي
+                        </a>
+                        <a href="#products">
+                            <i class="fas fa-chevron-left"></i>
+                            شبابيك بي في سي
+                        </a>
+                        <a href="#products">
+                            <i class="fas fa-chevron-left"></i>
+                            ديكورات ألمونيوم
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>معلومات التواصل</h3>
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>الهاتف</strong>
+                                <a href="tel:+218912141471">0912141471</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>واتساب</strong>
+                                <a href="https://wa.me/218912141471" target="_blank">0912141471</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>العنوان</strong>
+                                <span>ليبيا - زليتن</span>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>ساعات العمل</strong>
+                                <span>السبت - الخميس: 8:00 ص - 6:00 م</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 <a href="#home">شركة بوابة البناء</a>. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== LOADER ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.fonts) {
+                document.fonts.ready.then(function() {
+                    setTimeout(function() {
+                        document.getElementById('loader').classList.add('hidden');
+                    }, 600);
+                });
+            } else {
+                setTimeout(function() {
+                    document.getElementById('loader').classList.add('hidden');
+                }, 1200);
+            }
+        });
+
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+        });
+
+        // ========== MOBILE MENU ==========
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when clicking on a link
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navLinks.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+
+            if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ========== HEADER SCROLL EFFECT ==========
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // ========== SCROLL TO TOP ==========
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 400) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ========== SMOOTH SCROLLING ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ========== ACTIVE NAV LINK ==========
+        const sections = document.querySelectorAll('section[id]');
+
+        function updateActiveLink() {
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 200;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinksItems.forEach(link => link.classList.remove('active'));
+                    if (navLink) {
+                        navLink.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+        updateActiveLink();
+
+        // ========== FADE IN ANIMATIONS ==========
+        const fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        });
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+
+        // ========== COUNTER ANIMATION ==========
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let hasAnimated = false;
+
+        const animateCounter = (element) => {
+            const text = element.textContent;
+            const target = parseInt(text.replace(/\D/g, ''));
+            const suffix = text.replace(/[0-9]/g, '');
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current) + suffix;
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + suffix;
+                }
+            };
+
+            updateCounter();
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    statNumbers.forEach(stat => {
+                        animateCounter(stat);
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        const aboutSection = document.querySelector('.about');
+        if (aboutSection) {
+            statsObserver.observe(aboutSection);
+        }
+
+        // ========== IMAGE LOADING ==========
+        document.querySelectorAll('img').forEach(img => {
+            img.style.transition = 'opacity 0.5s ease';
+
+            if (img.complete && img.naturalHeight !== 0) {
+                img.style.opacity = '1';
+            } else {
+                img.style.opacity = '0';
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+
+                setTimeout(() => {
+                    img.style.opacity = '1';
+                }, 2000);
+            }
+
+            img.addEventListener('error', function() {
+                this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23f0f0f0" width="400" height="300"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-family="Arial"%3Eالصورة غير متوفرة%3C/text%3E%3C/svg%3E';
+                this.style.objectFit = 'contain';
+                this.style.opacity = '1';
+            });
+        });
+
+        // ========== GALLERY LIGHTBOX EFFECT ==========
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                if (img) {
+                    const lightbox = document.createElement('div');
+                    lightbox.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.95);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 10000;
+                        cursor: pointer;
+                        animation: fadeIn 0.3s ease;
+                    `;
+
+                    const lightboxImg = document.createElement('img');
+                    lightboxImg.src = img.src;
+                    lightboxImg.style.cssText = `
+                        max-width: 90%;
+                        max-height: 90%;
+                        border-radius: 10px;
+                        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+                    `;
+
+                    lightbox.appendChild(lightboxImg);
+                    document.body.appendChild(lightbox);
+                    document.body.style.overflow = 'hidden';
+
+                    lightbox.addEventListener('click', function() {
+                        this.style.animation = 'fadeOut 0.3s ease';
+                        setTimeout(() => {
+                            document.body.removeChild(this);
+                            document.body.style.overflow = '';
+                        }, 300);
+                    });
+                }
+            });
+        });
+
+        // ========== PERFORMANCE OPTIMIZATION ==========
+        let ticking = false;
+
+        function requestTick(callback) {
+            if (!ticking) {
+                window.requestAnimationFrame(callback);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            requestTick(function() {
+                updateActiveLink();
+                ticking = false;
+            });
+        });
+
+        // ========== CONSOLE MESSAGE ==========
+        console.log('%c شركة بوابة البناء ', 'background: #c17817; color: white; font-size: 22px; padding: 12px; font-weight: bold;');
+        console.log('%c لصناعة الألمونيوم والبي في سي ', 'background: #8b5a0f; color: white; font-size: 18px; padding: 10px;');
+        console.log('%c 📞 0912141471 ', 'background: #2c1810; color: white; font-size: 16px; padding: 8px;');
+
+        // ========== PREVENT CONTEXT MENU ON IMAGES (OPTIONAL) ==========
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+        });
+
+        // ========== INITIAL REVEAL ==========
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                fadeElements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        element.classList.add('visible');}
+                });
+            }, 100);
+        });
+
+        // ========== LAZY LOADING FOR IMAGES ==========
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // ========== FORM VALIDATION (IF NEEDED) ==========
+        const contactForms = document.querySelectorAll('form');
+        contactForms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                let isValid = true;
+
+                formData.forEach((value, key) => {
+                    if (!value.trim()) {
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+                    this.reset();
+                } else {
+                    alert('الرجاء ملء جميع الحقول المطلوبة');
+                }
+            });
+        });
+
+        // ========== PARALLAX EFFECT FOR HERO ==========
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallax = hero.querySelector('.hero-content');
+                if (parallax && scrolled < window.innerHeight) {
+                    parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+        }
+
+        // ========== TYPING EFFECT FOR HERO TITLE (OPTIONAL) ==========
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.textContent = '';
+
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+
+            type();
+        }
+
+        // ========== PRODUCT CARD HOVER EFFECT ==========
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+        });
+
+        // ========== SERVICE CARD ANIMATION ==========
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // ========== FEATURE CARD STAGGER ANIMATION ==========
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // ========== SCROLL PROGRESS INDICATOR (OPTIONAL) ==========
+        function createScrollProgress() {
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 4px;
+                background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+                z-index: 10000;
+                transition: width 0.1s ease;
+            `;
+            document.body.appendChild(progressBar);
+
+            window.addEventListener('scroll', function() {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.pageYOffset / windowHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        }
+
+        // Uncomment to enable scroll progress
+        // createScrollProgress();
+
+        // ========== BACK TO TOP SMOOTH ANIMATION ==========
+        scrollTopBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.1)';
+        });
+
+        scrollTopBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+
+        // ========== WHATSAPP BUTTON ANIMATION ==========
+        const whatsappBtn = document.querySelector('.whatsapp-float a');
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.15) rotate(5deg)';
+            });
+
+            whatsappBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        }
+
+        // ========== DETECT MOBILE DEVICE ==========
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        if (isMobileDevice()) {
+            document.body.classList.add('mobile-device');
+        }
+
+        // ========== PREVENT ZOOM ON DOUBLE TAP (iOS) ==========
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // ========== HANDLE ORIENTATION CHANGE ==========
+        window.addEventListener('orientationchange', function() {
+            setTimeout(function() {
+                window.scrollTo(0, window.pageYOffset);
+            }, 100);
+        });
+
+        // ========== PRELOAD CRITICAL IMAGES ==========
+        function preloadImages(urls) {
+            urls.forEach(url => {
+                const img = new Image();
+                img.src = url;
+            });
+        }
+
+        // Preload hero and important images
+        const criticalImages = [
+            'logo.png',
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800'
+        ];
+        preloadImages(criticalImages);
+
+        // ========== ACCESSIBILITY IMPROVEMENTS ==========
+        document.querySelectorAll('a, button').forEach(element => {
+            if (!element.hasAttribute('aria-label') && !element.textContent.trim()) {
+                element.setAttribute('aria-label', 'رابط');
+            }
+        });
+
+        // ========== KEYBOARD NAVIGATION ==========
+        document.addEventListener('keydown', function(e) {
+            // ESC key to close mobile menu
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            }
+
+            // Home key to scroll to top
+            if (e.key === 'Home' && e.ctrlKey) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // End key to scroll to bottom
+            if (e.key === 'End' && e.ctrlKey) {
+                e.preventDefault();
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        });
+
+        // ========== SOCIAL SHARE FUNCTIONALITY (OPTIONAL) ==========
+        function shareOnSocial(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('شركة بوابة البناء لصناعة الألمونيوم والبي في سي');
+
+            const shareUrls = {
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+                twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
+                whatsapp: `https://wa.me/?text=${text}%20${url}`,
+                linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`
+            };
+
+            if (shareUrls[platform]) {
+                window.open(shareUrls[platform], '_blank', 'width=600,height=400');
+            }
+        }
+
+        // ========== COOKIE CONSENT (OPTIONAL) ==========
+        function showCookieConsent() {
+            if (!localStorage.getItem('cookieConsent')) {
+                const consent = document.createElement('div');
+                consent.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    left: 20px;
+                    right: 20px;
+                    background: var(--white);
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: var(--shadow-lg);
+                    z-index: 9998;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 20px;
+                    flex-wrap: wrap;
+                `;
+
+                consent.innerHTML = `
+                    <p style="margin: 0; color: var(--dark-color); font-size: 15px;">
+                        نستخدم ملفات تعريف الارتباط لتحسين تجربتك على موقعنا
+                    </p>
+                    <button onclick="acceptCookies()" style="
+                        background: var(--primary-color);
+                        color: var(--white);
+                        border: none;
+                        padding: 10px 25px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-weight: 700;
+                        font-size: 15px;
+                    ">موافق</button>
+                `;
+
+                document.body.appendChild(consent);
+            }
+        }
+
+        window.acceptCookies = function() {
+            localStorage.setItem('cookieConsent', 'true');
+            const consent = document.querySelector('[style*="position: fixed"][style*="bottom: 20px"]');
+            if (consent) {
+                consent.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => consent.remove(), 300);
+            }
+        };
+
+        // Uncomment to enable cookie consent
+        // setTimeout(showCookieConsent, 2000);
+
+        // ========== PERFORMANCE MONITORING ==========
+        if ('PerformanceObserver' in window) {
+            const perfObserver = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (entry.entryType === 'largest-contentful-paint') {
+                        console.log('LCP:', entry.renderTime || entry.loadTime);
+                    }
+                }
+            });
+
+            try {
+                perfObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+            } catch (e) {
+                console.log('Performance monitoring not supported');
+            }
+        }
+
+        // ========== FINAL INITIALIZATION ==========
+        console.log('%c ✓ Website Loaded Successfully ', 'background: #25D366; color: white; font-size: 14px; padding: 8px; border-radius: 4px;');
+        console.log('%c Developed with ❤️ for بوابة البناء ', 'color: #c17817; font-size: 12px; font-style: italic;');
+
+        // ========== ERROR HANDLING ==========
+        window.addEventListener('error', function(e) {
+            console.error('Error occurred:', e.message);
+        });
+
+        window.addEventListener('unhandledrejection', function(e) {
+            console.error('Unhandled promise rejection:', e.reason);
+        });
+    </script>
+</body>
+</html>
